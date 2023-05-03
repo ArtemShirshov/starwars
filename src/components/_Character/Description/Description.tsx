@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Skeleton, Typography } from '@mui/material';
 
-export const Description = ({ value, label, loading }: any) => {
+interface IDescription {
+  value: string;
+  label: string;
+  loading: boolean;
+}
+
+export const Description: FC<IDescription> = ({ value, label, loading }) => {
   return (
     <Typography variant="body2">
       {loading ? (

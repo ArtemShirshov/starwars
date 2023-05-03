@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import { peopleService } from 'services/People.service';
+import { CharacterType } from '../../../store/CharacterItems';
 
 export const AutocompleteViewModel = () => {
   const [open, setOpen] = useState(false);
   const [options, setOptions] = useState<readonly any[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const fetchCharacter = useCallback(({ name }: any = {}) => {
+  const fetchCharacter = useCallback(({ name }: { name?: string } = {}) => {
     setLoading(true);
 
     return peopleService
@@ -17,7 +18,7 @@ export const AutocompleteViewModel = () => {
         },
       })
       .then(({ data }) => {
-        return data.results.map((item: any) => {
+        return data.results.map((item: CharacterType) => {
           const match = item.url.match(/\/([^/]+)\/?$/);
           const id = match ? match[1] : null;
           return {
@@ -31,7 +32,7 @@ export const AutocompleteViewModel = () => {
       });
   }, []);
 
-  const onChange: any = useCallback(
+  const onChange = useCallback(
     (e: any) => {
       if (e.target.value === '') {
         setOptions([]);

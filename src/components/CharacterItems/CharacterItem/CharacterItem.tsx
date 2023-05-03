@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   Card,
   CardContent,
@@ -7,7 +7,11 @@ import {
   CardActionArea,
 } from '@mui/material';
 
-export const CharacterItem = ({ name, id }: any) => {
+import { CharacterType } from 'store/CharacterItems';
+
+type CharacterItemType = Pick<CharacterType, 'name' | 'id'>;
+
+export const CharacterItem: FC<CharacterItemType> = ({ name, id }) => {
   return (
     <Card
       sx={{

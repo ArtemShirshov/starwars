@@ -2,8 +2,19 @@ import { AxiosResponse } from 'axios';
 
 import { instance } from 'services/instance';
 
+interface PeopleData {
+  params: Partial<{
+    page: string;
+    search: string;
+  }>;
+  id: string | number;
+}
+
 class People {
-  getPeople({ params, id }: any): Promise<AxiosResponse<any, any>> {
+  getPeople({
+    params,
+    id,
+  }: Partial<PeopleData>): Promise<AxiosResponse<any, any>> {
     return instance.get(`/people${id ? `/${id}` : ''}`, {
       params,
     });

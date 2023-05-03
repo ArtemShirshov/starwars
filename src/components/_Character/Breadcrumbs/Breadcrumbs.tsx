@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   Typography,
   Breadcrumbs as MuiBreadcrumbs,
@@ -7,7 +7,12 @@ import {
 
 import { Link } from 'components/Link/Link';
 
-export const Breadcrumbs = ({ page, loading }: any) => {
+interface IBreadcrumbs {
+  page: string;
+  loading: boolean;
+}
+
+export const Breadcrumbs: FC<IBreadcrumbs> = ({ page, loading }) => {
   return (
     <MuiBreadcrumbs aria-label="breadcrumb">
       <Link href="/">Home</Link>

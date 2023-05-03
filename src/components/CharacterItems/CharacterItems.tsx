@@ -2,6 +2,8 @@ import React from 'react';
 import { Box, Skeleton, Grid } from '@mui/material';
 import Pagination from '@mui/material/Pagination';
 
+import { CharacterType } from 'store/CharacterItems';
+
 import { CharacterItemsViewModel } from './CharacterItems.viewmodel';
 import { CharacterItem } from './CharacterItem/CharacterItem';
 import { CharacterItemSkeleton } from './CharacterItem/CharacterItemSkeleton';
@@ -27,7 +29,7 @@ export const CharacterItems = () => {
                 <CharacterItemSkeleton />
               </Grid>
             ))
-          : characterItems?.map((item: any) => (
+          : characterItems?.map((item: CharacterType) => (
               <Grid
                 item
                 key={item.name}

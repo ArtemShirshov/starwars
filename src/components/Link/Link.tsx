@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { FC, ReactElement } from 'react';
 import { Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 
-export const Link = ({ children, href }: any) => {
+interface ILink {
+  children: ReactElement | string;
+  href: string;
+}
+
+export const Link: FC<ILink> = ({ children, href }) => {
   return (
     <RouterLink
       style={{

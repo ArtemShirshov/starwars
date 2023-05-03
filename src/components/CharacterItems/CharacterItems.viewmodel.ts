@@ -10,20 +10,21 @@ import {
   getCharacterItems,
   setPages,
   getCharacterPages,
+  CharacterType,
 } from 'store/CharacterItems';
 
 export const CharacterItemsViewModel = () => {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState<number>(1);
   const [loading, setLoading] = useState(true);
 
   const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const characterItems: any = useSelector(getCharacterItems);
-  const characterPages: any = useSelector(getCharacterPages);
+  const characterItems = useSelector(getCharacterItems);
+  const characterPages = useSelector(getCharacterPages);
 
   const fetchCharacter = useCallback(
-    ({ page }: any = {}) => {
+    ({ page }: { page?: string } = {}) => {
       setLoading(true);
 
       try {
@@ -34,7 +35,7 @@ export const CharacterItemsViewModel = () => {
             },
           })
           .then(({ data }) => {
-            const _data = data.results.map((item: any) => {
+            const _data = data.results.map((item: CharacterType) => {
               const match = item.url.match(/\/([^/]+)\/?$/);
               const id = match ? match[1] : null;
               return {
