@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Skeleton } from '@mui/material';
+import { Box, Skeleton, Grid } from '@mui/material';
 import Pagination from '@mui/material/Pagination';
 
 import { CharacterItemsViewModel } from './CharacterItems.viewmodel';
@@ -18,26 +18,27 @@ export const CharacterItems = () => {
 
   return (
     <>
-      <Box
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-        }}
-      >
+      <Grid container spacing={2}>
         {loading
           ? Array.from({
               length: 10,
             }).map((item, index) => (
-              <Box key={index} p={2}>
+              <Grid item key={index} md={3} xs={12}>
                 <CharacterItemSkeleton />
-              </Box>
+              </Grid>
             ))
           : characterItems?.map((item: any) => (
-              <Box key={item.name} onClick={() => onClick(item.id)} p={2}>
+              <Grid
+                item
+                key={item.name}
+                md={3}
+                xs={12}
+                onClick={() => onClick(item.id)}
+              >
                 <CharacterItem {...item} />
-              </Box>
+              </Grid>
             ))}
-      </Box>
+      </Grid>
 
       <Box
         my={2}
