@@ -40,9 +40,10 @@ export const CharacterPageViewModel = () => {
   }, [character, formState]);
 
   const onChange = useCallback((e: any) => {
-    setFormState({
+    setFormState((state) => ({
+      ...state,
       [e.target.name]: e.target.value,
-    });
+    }));
   }, []);
 
   const onReset = useCallback(() => {
