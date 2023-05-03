@@ -32,8 +32,8 @@ export const CharacterItems = () => {
                 item
                 key={item.name}
                 md={3}
-                xs={12}
                 onClick={() => onClick(item.id)}
+                xs={12}
               >
                 <CharacterItem {...item} />
               </Grid>
