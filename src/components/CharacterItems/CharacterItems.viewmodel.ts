@@ -16,7 +16,7 @@ export const CharacterItemsViewModel = () => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
 
-  let [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const characterItems: any = useSelector(getCharacterItems);
@@ -90,6 +90,7 @@ export const CharacterItemsViewModel = () => {
     return () => {
       dispatch(setCharacterItems([]));
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {

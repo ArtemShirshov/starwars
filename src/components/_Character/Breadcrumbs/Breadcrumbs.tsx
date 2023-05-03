@@ -12,7 +12,7 @@ export const Breadcrumbs = ({ page, loading }: any) => {
     <MuiBreadcrumbs aria-label="breadcrumb">
       <Link href="/">Home</Link>
       <Typography color="text.primary">
-        {loading ? <Skeleton width="150px" animation="wave" /> : page}
+        {loading ? <Skeleton animation="wave" width="150px" /> : page}
       </Typography>
     </MuiBreadcrumbs>
   );

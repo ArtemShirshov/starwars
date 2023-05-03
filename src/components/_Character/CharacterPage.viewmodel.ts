@@ -52,6 +52,7 @@ export const CharacterPageViewModel = () => {
 
   useEffect(() => {
     fetchCharacter();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {

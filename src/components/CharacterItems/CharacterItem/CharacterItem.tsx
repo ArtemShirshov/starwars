@@ -29,10 +29,10 @@ export const CharacterItem = ({ name, id }: any) => {
           <Typography
             color="primary"
             gutterBottom
-            variant="h6"
             sx={{
               margin: 0,
             }}
+            variant="h6"
           >
             {name}
           </Typography>
