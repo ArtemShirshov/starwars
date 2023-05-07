@@ -4,7 +4,7 @@ import { instance } from 'services/instance';
 
 interface PeopleData {
   params: Partial<{
-    page: string;
+    page: string | number;
     search: string;
   }>;
   id: string | number;

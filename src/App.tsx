@@ -1,7 +1,6 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { Routes, Route } from 'react-router-dom';
-import { ThemeProvider, Box } from '@mui/material';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Box, ThemeProvider } from '@mui/material';
 import { Provider } from 'react-redux';
 
 import { Home } from 'pages/Home';

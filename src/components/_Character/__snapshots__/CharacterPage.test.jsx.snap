@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterPage renders correctly 1`] = `
+Array [
+  <Box
+    my={2}
+  >
+    <Breadcrumbs
+      loading={false}
+      page="Luke"
+    />
+  </Box>,
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-13it7l2-MuiPaper-root"
+  >
+    <Grid
+      container={true}
+    >
+      <Grid
+        height={550}
+        item={true}
+        sx={
+          Object {
+            "minWidth": 400,
+          }
+        }
+        xs="auto"
+      >
+        <img
+          alt=""
+          src="/assets/characters/1.jpg"
+        />
+      </Grid>
+      <Grid
+        item={true}
+        sx={
+          Object {
+            "p": 2,
+          }
+        }
+        xs={true}
+      >
+        <Box
+          mb={3}
+        >
+          <Typography
+            color="primary"
+            variant="h4"
+          >
+            Luke
+          </Typography>
+        </Box>
+        <Stack
+          spacing={1}
+        >
+          <Description
+            label="Birth Year"
+            loading={false}
+            value="Y1231"
+          />
+        </Stack>
+        <Box
+          my={2}
+        >
+          <Button
+            disabled={false}
+            onClick={[Function]}
+            type="submit"
+          >
+            Edit
+          </Button>
+        </Box>
+      </Grid>
+    </Grid>
+  </div>,
+]
+`;
+
+exports[`CharacterPage renders correctly with editing 1`] = `
+Array [
+  <Box
+    my={2}
+  >
+    <Breadcrumbs
+      loading={false}
+      page="Luke"
+    />
+  </Box>,
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-13it7l2-MuiPaper-root"
+  >
+    <Grid
+      container={true}
+    >
+      <Grid
+        height={550}
+        item={true}
+        sx={
+          Object {
+            "minWidth": 400,
+          }
+        }
+        xs="auto"
+      >
+        <img
+          alt=""
+          src="/assets/characters/1.jpg"
+        />
+      </Grid>
+      <Grid
+        item={true}
+        sx={
+          Object {
+            "p": 2,
+          }
+        }
+        xs={true}
+      >
+        <Box
+          mb={3}
+        >
+          <TextField
+            defaultValue="Luke"
+            fullWidth={true}
+            label="Name"
+            name="name"
+            onChange={[MockFunction]}
+          />
+        </Box>
+        <Stack
+          spacing={1}
+        >
+          <TextField
+            defaultValue="Y1231"
+            label="Birth Year"
+            name="birth_year"
+            onChange={[MockFunction]}
+          />
+        </Stack>
+        <Box
+          my={2}
+        >
+          <Button
+            onClick={[MockFunction]}
+          >
+            Save
+          </Button>
+          <Button
+            onClick={[MockFunction]}
+          >
+            Reset
+          </Button>
+        </Box>
+      </Grid>
+    </Grid>
+  </div>,
+]
+`;
+
+exports[`CharacterPage renders correctly with loading 1`] = `
+Array [
+  <Box
+    my={2}
+  >
+    <Breadcrumbs
+      loading={true}
+      page="Luke"
+    />
+  </Box>,
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-13it7l2-MuiPaper-root"
+  >
+    <Grid
+      container={true}
+    >
+      <Grid
+        height={550}
+        item={true}
+        sx={
+          Object {
+            "minWidth": 400,
+          }
+        }
+        xs="auto"
+      >
+        <img
+          alt=""
+          src="/assets/characters/1.jpg"
+        />
+      </Grid>
+      <Grid
+        item={true}
+        sx={
+          Object {
+            "p": 2,
+          }
+        }
+        xs={true}
+      >
+        <Box
+          mb={3}
+        >
+          <Typography
+            color="primary"
+            variant="h4"
+          >
+            <Skeleton />
+          </Typography>
+        </Box>
+        <Stack
+          spacing={1}
+        >
+          <Description
+            label="Birth Year"
+            loading={true}
+            value="Y1231"
+          />
+        </Stack>
+        <Box
+          my={2}
+        >
+          <Button
+            disabled={true}
+            onClick={[Function]}
+            type="submit"
+          >
+            Edit
+          </Button>
+        </Box>
+      </Grid>
+    </Grid>
+  </div>,
+]
+`;

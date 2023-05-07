@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  TextField,
   Autocomplete as MuiAutocomplete,
-  CircularProgress,
   Avatar,
-  MenuItem,
+  CircularProgress,
   Grid,
+  MenuItem,
+  TextField,
 } from '@mui/material';
 
 import { Link } from 'components/Link/Link';

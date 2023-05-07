@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Skeleton, Grid } from '@mui/material';
-import Pagination from '@mui/material/Pagination';
+import { Box, Grid, Pagination, Skeleton } from '@mui/material';
 
 import { CharacterType } from 'store/CharacterItems';
 
@@ -56,7 +55,7 @@ export const CharacterItems = () => {
             color="primary"
             count={characterPages}
             onChange={handleChangePage}
-            page={page}
+            page={Number(page)}
             shape="rounded"
           />
         )}

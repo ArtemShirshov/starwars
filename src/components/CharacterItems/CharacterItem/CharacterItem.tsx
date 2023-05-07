@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import {
   Card,
+  CardActionArea,
   CardContent,
   CardMedia,
   Typography,
-  CardActionArea,
 } from '@mui/material';
 
 import { CharacterType } from 'store/CharacterItems';

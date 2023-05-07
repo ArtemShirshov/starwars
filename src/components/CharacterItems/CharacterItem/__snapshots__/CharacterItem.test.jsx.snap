@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterItems renders correctly 1`] = `
+<Card
+  sx={
+    Object {
+      "height": "100%",
+    }
+  }
+>
+  <CardActionArea
+    sx={
+      Object {
+        "height": "100%",
+      }
+    }
+  >
+    <CardMedia
+      alt="green iguana"
+      component="img"
+      height="400"
+      image="/assets/characters/1.jpg"
+    />
+    <CardContent>
+      <Typography
+        color="primary"
+        gutterBottom={true}
+        sx={
+          Object {
+            "margin": 0,
+          }
+        }
+        variant="h6"
+      >
+        Luke
+      </Typography>
+    </CardContent>
+  </CardActionArea>
+</Card>
+`;

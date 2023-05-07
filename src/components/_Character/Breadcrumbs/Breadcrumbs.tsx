@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import {
-  Typography,
   Breadcrumbs as MuiBreadcrumbs,
   Skeleton,
+  Typography,
 } from '@mui/material';
 
 import { Link } from 'components/Link/Link';

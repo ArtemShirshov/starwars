@@ -1,14 +1,14 @@
 import React from 'react';
 import {
-  Grid,
-  Typography,
-  Stack,
   Box,
-  Skeleton,
   Button,
+  Grid,
+  Paper,
+  Skeleton,
+  Stack,
   TextField,
+  Typography,
 } from '@mui/material';
-import { Paper } from '@mui/material';
 
 import { CharacterPageViewModel } from './CharacterPage.viewmodel';
 import { Breadcrumbs } from './Breadcrumbs/Breadcrumbs';
@@ -75,25 +75,29 @@ export const CharacterPage = () => {
             <Stack spacing={1}>
               {descriptionItems.map((item) => (
                 <>
-                  {editing ? (
-                    <TextField
-                      defaultValue={character[item.key]}
-                      key={item.label}
-                      label={item.label}
-                      name={item.key}
-                      onChange={onChange}
-                      type={item.type}
-                    />
-                  ) : (
-                    <Description
-                      key={item.label}
-                      label={item.label}
-                      loading={loading}
-                      value={`${character[item.key]}${
-                        item.additionalLabel ? item.additionalLabel : ''
-                      }`}
-                    />
-                  )}
+                  {character[item.key] ? (
+                    <>
+                      {editing ? (
+                        <TextField
+                          defaultValue={character[item.key]}
+                          key={item.label}
+                          label={item.label}
+                          name={item.key}
+                          onChange={onChange}
+                          type={item.type}
+                        />
+                      ) : (
+                        <Description
+                          key={item.label}
+                          label={item.label}
+                          loading={loading}
+                          value={`${character[item.key]}${
+                            item.additionalLabel ? item.additionalLabel : ''
+                          }`}
+                        />
+                      )}
+                    </>
+                  ) : null}
                 </>
               ))}
             </Stack>

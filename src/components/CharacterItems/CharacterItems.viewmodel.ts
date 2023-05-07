@@ -6,15 +6,15 @@ import { useSearchParams } from 'react-router-dom';
 import { peopleService } from 'services/People.service';
 
 import {
-  setCharacterItems,
-  getCharacterItems,
-  setPages,
-  getCharacterPages,
   CharacterType,
+  getCharacterItems,
+  getCharacterPages,
+  setCharacterItems,
+  setPages,
 } from 'store/CharacterItems';
 
 export const CharacterItemsViewModel = () => {
-  const [page, setPage] = useState<number>(1);
+  const [page, setPage] = useState<number | string>(1);
   const [loading, setLoading] = useState(true);
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -24,7 +24,7 @@ export const CharacterItemsViewModel = () => {
   const characterPages = useSelector(getCharacterPages);
 
   const fetchCharacter = useCallback(
-    ({ page }: { page?: string } = {}) => {
+    ({ page }: { page?: number | string } = {}) => {
       setLoading(true);
 
       try {
@@ -58,13 +58,13 @@ export const CharacterItemsViewModel = () => {
   );
 
   const handleChangePage = useCallback(
-    (e: any, page: any) => {
+    (e: any, page: string | number) => {
       setPage(page);
       fetchCharacter({
         page,
       });
       setSearchParams({
-        page,
+        page: String(page),
       });
     },
     [fetchCharacter, setSearchParams]
