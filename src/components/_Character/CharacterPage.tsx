@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {
   Box,
   Button,
@@ -74,13 +74,12 @@ export const CharacterPage = () => {
 
             <Stack spacing={1}>
               {descriptionItems.map((item) => (
-                <>
+                <Fragment key={`${item.key}-${character[item.key]}`}>
                   {character[item.key] ? (
                     <>
                       {editing ? (
                         <TextField
                           defaultValue={character[item.key]}
-                          key={item.label}
                           label={item.label}
                           name={item.key}
                           onChange={onChange}
@@ -88,7 +87,6 @@ export const CharacterPage = () => {
                         />
                       ) : (
                         <Description
-                          key={item.label}
                           label={item.label}
                           loading={loading}
                           value={`${character[item.key]}${
@@ -98,7 +96,7 @@ export const CharacterPage = () => {
                       )}
                     </>
                   ) : null}
-                </>
+                </Fragment>
               ))}
             </Stack>
 
